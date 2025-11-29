@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketing Intelligence Toolkit — SharpMind</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .container{max-width:980px;margin:40px auto;padding:0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+    input,select{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px}
+    .btn{margin-top:8px;padding:10px 16px;border:0;border-radius:10px;background:#3b00ff;color:#fff;font-weight:600;cursor:pointer}
+    .muted{opacity:.8}
+    .kpi{font-size:22px;font-weight:800;margin:6px 0}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Marketing Intelligence Toolkit</h1>
+      <p class="subtitle">Playbooks & calculators</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card">
+        <h3>CAC / CPA</h3>
+        <label>Ad Spend</label><input id="spend" type="number" placeholder="1000">
+        <label>Leads</label><input id="leads" type="number" placeholder="100">
+        <label>Customers</label><input id="cust" type="number" placeholder="10">
+        <button class="btn" onclick="calc()">Calculate</button>
+        <div class="kpi" id="cpa">CPA: –</div>
+        <div class="kpi" id="cac">CAC: –</div>
+      </div>
+
+      <div class="card">
+        <h3>LTV (grezzo)</h3>
+        <label>ARPU mensile (€)</label><input id="arpu" type="number" placeholder="30">
+        <label>Margine lordo (%)</label><input id="gm" type="number" placeholder="70">
+        <label>Lifespan (mesi)</label><input id="life" type="number" placeholder="18">
+        <button class="btn" onclick="ltv()">Compute</button>
+        <div class="kpi" id="ltv">LTV: –</div>
+      </div>
+
+      <div class="card">
+        <h3>Playbook</h3>
+        <label>Obiettivo</label>
+        <select id="obj">
+          <option>Lead Gen B2B</option>
+          <option>PLG SaaS</option>
+          <option>E-commerce</option>
+          <option>Retention</option>
+        </select>
+        <button class="btn" onclick="pb()">Generate</button>
+        <ul id="pb-list" style="margin-top:8px"></ul>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:12px">Nota: calcoli semplici, usa come stima iniziale. Per analisi avanzate integra i tuoi dati.</p>
+  </div>
+
+  <script>
+    function fmt(n){ return isFinite(n)? (Math.round(n*100)/100).toLocaleString(): '–'; }
+    function calc(){
+      const spend=+document.getElementById('spend').value||0;
+      const leads=+document.getElementById('leads').value||0;
+      const cust=+document.getElementById('cust').value||0;
+      document.getElementById('cpa').textContent = "CPA: € "+fmt(leads? spend/leads : NaN);
+      document.getElementById('cac').textContent = "CAC: € "+fmt(cust? spend/cust : NaN);
+    }
+    function ltv(){
+      const arpu=+document.getElementById('arpu').value||0;
+      const gm=(+document.getElementById('gm').value||0)/100;
+      const life=+document.getElementById('life').value||0;
+      const val = arpu*gm*life;
+      document.getElementById('ltv').textContent = "LTV: € "+fmt(val);
+    }
+    function pb(){
+      const o=document.getElementById('obj').value;
+      const ul=document.getElementById('pb-list'); ul.innerHTML="";
+      const map={
+        "Lead Gen B2B":[
+          "Segmenta ICP → sequenze email multistep",
+          "Landing per problema, lead magnet tecnico",
+          "Retarget su case study con prova sociale"
+        ],
+        "PLG SaaS":[
+          "Onboarding guidato + checklist Aha! moment",
+          "Event tracking → funnel & activation alerts",
+          "Pricing test su paywall feature-gated"
+        ],
+        "E-commerce":[
+          "Catalogo → bundle AOV + offerte limitate",
+          "Email post-acquisto → UGC & referral",
+          "RFM: win-back per lapsed 60/90 giorni"
+        ],
+        "Retention":[
+          "Cohort & churn reasons → campagne mirate",
+          "In-app nudge su feature stickiness",
+          "NPS→ roadmap & comunicazione changelog"
+        ]
+      };
+      (map[o]||["Definisci obiettivo specifico."]).forEach(x=>{const li=document.createElement('li'); li.textContent=x; ul.appendChild(li);});
+    }
+  </script>
+</body>
+</html>

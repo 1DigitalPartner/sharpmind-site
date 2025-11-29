@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SharpMind Admin</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        body { padding: 30px; }
+        h1 { margin-bottom: 10px; }
+        .section { margin-top: 40px; }
+        .log-box {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            max-height: 250px;
+            overflow-y: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            white-space: pre-wrap;
+            font-size: 0.85rem;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #3b00ff;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<h1>SharpMind Admin Dashboard</h1>
+<p>Internal system monitor</p>
+
+<section class="section">
+    <h2>Generate New Post</h2>
+    <p>Click to instantly trigger post generation via script.</p>
+    <a href="/admin/run-generate" class="btn">Generate Now</a>
+</section>
+
+<section class="section">
+    <h2>Latest Logs</h2>
+    <div id="logbox" class="log-box">Loading logs...</div>
+</section>
+
+<section class="section">
+    <h2>Existing Posts</h2>
+    <ul id="post-list"></ul>
+</section>
+
+<script>
+fetch("/logs/latest.log")
+  .then(r => r.text())
+  .then(t => { document.getElementById("logbox").textContent = t })
+  .catch(() => { document.getElementById("logbox").textContent = "No logs available"; });
+
+fetch("/api/posts.json")
+  .then(r => r.json())
+  .then(posts => {
+      const ul = document.getElementById("post-list");
+      posts.forEach(p => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="/en/posts/${p.slug}/">${p.title}</a>`;
+          ul.appendChild(li);
+      });
+  });
+</script>
+
+</body>
+</html>

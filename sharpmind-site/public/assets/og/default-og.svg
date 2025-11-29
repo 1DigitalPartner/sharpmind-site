@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#3b00ff" offset="0"/><stop stop-color="#8b5cf6" offset="1"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="60" y="120" fill="#fff" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto" font-size="64" font-weight="700">SharpMind</text>
+  <text x="60" y="200" fill="#fff" font-family="Inter, system-ui" font-size="28" opacity="0.9">AI Insights & Analytics</text>
+</svg>

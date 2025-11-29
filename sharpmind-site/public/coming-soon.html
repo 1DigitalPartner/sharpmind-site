@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SharpMind — Coming soon</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;background:#0f1226;color:#fff}
+  .wrap{min-height:100dvh;display:grid;place-items:center;padding:32px}
+  .card{max-width:720px;width:100%;background:#15193a;border:1px solid #283056;border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  h1{font-size:28px;margin:0 0 10px}
+  p{color:#b9c0d4;line-height:1.6}
+  form{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+  input[type=email]{flex:1;min-width:240px;padding:12px 14px;border-radius:10px;border:1px solid #3a4370;background:#0f1226;color:#fff}
+  button{padding:12px 16px;border-radius:10px;border:0;background:#4F46E5;color:#fff;font-weight:600;cursor:pointer}
+  .note{font-size:12px;color:#8e96b5;margin-top:8px}
+</style>
+</head><body>
+<div class="wrap"><div class="card">
+  <h1>We’re shipping upgrades.</h1>
+  <p>SharpMind sta rifinendo il sito. Torniamo online a breve. Se vuoi essere avvisato appena apriamo:</p>
+  <form onsubmit="return sub(event)">
+    <input type="email" name="email" placeholder="you@example.com" required>
+    <button type="submit">Notify me</button>
+    <span id="msg" class="note"></span>
+  </form>
+  <p class="note">Status: maintenance mode. This page is not indexed.</p>
+</div></div>
+<script>
+async function sub(e){
+  e.preventDefault();
+  const f=e.target, m=document.getElementById('msg');
+  m.textContent='Invio...';
+  try{
+    const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:f.email.value})});
+    const j=await r.json().catch(()=>({}));
+    if(r.ok && j.ok){ m.textContent='Fatto! Controlla la posta per confermare.'; f.reset(); }
+    else{ m.textContent='Errore, riprova tra poco.'; }
+  }catch{ m.textContent='Errore di rete.'; }
+  return false;
+}
+</script>
+</body></html>

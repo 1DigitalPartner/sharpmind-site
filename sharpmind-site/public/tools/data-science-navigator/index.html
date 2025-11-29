@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Science Navigator</title><link rel="stylesheet" href="/assets/style.css">
+<style>.wrap{max-width:860px;margin:40px auto;padding:0 16px}.row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1 1 240px}</style>
+</head><body><div class="wrap">
+  <h1>Data Science Navigator</h1>
+  <div class="row">
+    <div><label>Target</label><select id="target">
+      <option value="num">Valore numerico</option>
+      <option value="cat">Classe/etichetta</option>
+      <option value="seg">Segmentazione</option>
+      <option value="series">Serie temporale</option>
+    </select></div>
+    <div><label>Feature</label><select id="feat">
+      <option value="tab">Tabellari</option>
+      <option value="text">Testo</option>
+      <option value="image">Immagini</option>
+      <option value="mix">Miste</option>
+    </select></div>
+  </div>
+  <button onclick="nav()">Suggest</button>
+  <pre id="out" style="background:#111;color:#eee;padding:14px;border-radius:10px;overflow:auto;margin-top:14px"></pre>
+</div>
+<script>
+function nav(){
+  const t=document.getElementById('target').value, f=document.getElementById('feat').value;
+  let rec=[];
+  if(t==="num"&&f==="tab") rec=["Linear/ElasticNet","XGBoost","CatBoost"];
+  else if(t==="cat"&&f==="tab") rec=["Logistic","XGBoost","LightGBM","CatBoost"];
+  else if(t==="seg") rec=["KMeans","HDBSCAN","GMM"];
+  else if(t==="series") rec=["Prophet","ARIMA/SARIMA","XGBoost w/ lags"];
+  else if(f==="text") rec=["Embeddings + Classifier","Transformers fine-tune"];
+  else if(f==="image") rec=["CNN/ViT fine-tune","CLIP + head"];
+  else rec=["Baseline + FeatureEng + Cross-Validation"];
+  document.getElementById('out').textContent = JSON.stringify({recommendations:rec}, null, 2);
+}
+</script>
+</body></html>

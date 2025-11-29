@@ -1,0 +1,21 @@
+<section class="section" id="newsletter">
+  <h2>Get SharpMind Weekly</h2>
+  <p class="section-desc">Strategic AI insights. Zero spam.</p>
+  <form id="sub" onsubmit="event.preventDefault(); sub();" style="margin:14px auto;max-width:520px">
+    <input type="email" id="email" placeholder="you@company.com" required
+           style="width:70%;padding:12px;border-radius:10px;border:1px solid #ddd">
+    <button type="submit" class="cta">Subscribe</button>
+    <div id="msg" style="margin-top:8px;font-size:.95rem;opacity:.85"></div>
+  </form>
+</section>
+<script>
+async function sub(){
+  const email = document.getElementById('email').value.trim();
+  const r = await fetch('/api/subscribe', {
+    method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({ email, source: location.pathname })
+  });
+  const j = await r.json();
+  document.getElementById('msg').textContent = j.ok ? "Check your inbox." : "Try again.";
+}
+</script>

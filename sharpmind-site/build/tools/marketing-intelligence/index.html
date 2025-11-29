@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Marketing Intelligence Toolkit</title><link rel="stylesheet" href="/assets/style.css">
+<style>.wrap{max-width:860px;margin:40px auto;padding:0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}</style>
+</head><body><div class="wrap">
+  <h1>Marketing Intelligence Toolkit</h1>
+  <div class="grid">
+    <label>Costo campagna (€)<br><input id="cost" type="number" value="1000"></label>
+    <label>Leads generate<br><input id="leads" type="number" value="100"></label>
+    <label>CR Lead→Client (%)<br><input id="cr" type="number" value="10"></label>
+    <label>ARPU mensile (€)<br><input id="arpu" type="number" value="80"></label>
+    <label>Churn mensile (%)<br><input id="churn" type="number" value="5"></label>
+  </div>
+  <button onclick="calc()">Calcola</button>
+  <pre id="out" style="background:#111;color:#eee;padding:14px;border-radius:10px;overflow:auto;margin-top:14px"></pre>
+</div>
+<script>
+const costEl = document.getElementById('cost');
+const leadsEl= document.getElementById('leads');
+const crEl   = document.getElementById('cr');
+const arpuEl = document.getElementById('arpu');
+const churnEl= document.getElementById('churn');
+const out    = document.getElementById('out');
+function round(x){return Math.round(x*100)/100}
+function calc(){
+  const cost=+costEl.value, leads=+leadsEl.value, cr=(+crEl.value)/100, arpu=+arpuEl.value, churn=(+churnEl.value)/100;
+  const clients = leads*cr, cac = clients? cost/clients : Infinity;
+  const ltv = churn>0 ? arpu*(1/churn) : arpu*24;
+  const payback = (cac/arpu) || Infinity;
+  out.textContent = JSON.stringify({clients, CAC:round(cac), LTV:round(ltv), Payback_Months:round(payback)}, null, 2);
+}
+</script>
+</body></html>

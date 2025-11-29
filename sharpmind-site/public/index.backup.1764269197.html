@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SharpMind — AI Insights & Analytics</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <h1>SharpMind</h1>
+        <p class="subtitle">Strategic AI Insights. Premium. Data-Driven. Daily.</p>
+        <a href="/en/posts/" class="cta">Explore Insights</a>
+    </div>
+</header>
+
+<section class="section">
+    <h2>AI Insights</h2>
+    <p class="section-desc">
+        Daily premium articles on AI, data, technology, business growth, and advanced analytics.
+    </p>
+</section>
+
+<!-- Smart Tools section -->
+<section class="section">
+  <h2>Smart Tools</h2>
+  <p class="section-desc">Analyzer • Navigator • Playbooks</p>
+</section>
+
+<section class="cards tools-grid">
+  <a class="card tool-card" href="/tools/ai-trends/">
+    <div class="tool-thumb t1">AI Trend Analyzer</div>
+    <h3>Scan & score AI trends</h3>
+    <p>Valuta Novelty, Momentum, Adoption, Moat. Score 0–100 con rationale.</p>
+    <span class="card-link">Open →</span>
+  </a>
+
+  <a class="card tool-card" href="/tools/ds-navigator/">
+    <div class="tool-thumb t2">Data Science Navigator</div>
+    <h3>Pick the right technique fast</h3>
+    <p>Seleziona task, dati e obiettivo. Modelli consigliati + pro/contro.</p>
+    <span class="card-link">Open →</span>
+  </a>
+
+  <a class="card tool-card" href="/tools/marketing-intel/">
+    <div class="tool-thumb t3">Marketing Intelligence</div>
+    <h3>Playbooks & calculators</h3>
+    <p>CAC/LTV, KPI rapidi e mini-playbook operativi per obiettivi marketing.</p>
+    <span class="card-link">Open →</span>
+  </a>
+</section>
+
+<footer>
+    © 2025 SharpMind — AI Insights & Analytics
+<section class="section" id="newsletter">
+  <h2>Get SharpMind Weekly</h2>
+  <p class="section-desc">Strategic AI insights. Zero spam.</p>
+  <form id="sub" onsubmit="event.preventDefault(); sub();" style="margin:14px auto;max-width:520px">
+    <input type="email" id="email" placeholder="you@company.com" required
+           style="width:70%;padding:12px;border-radius:10px;border:1px solid #ddd">
+    <button type="submit" class="cta">Subscribe</button>
+    <div id="msg" style="margin-top:8px;font-size:.95rem;opacity:.85"></div>
+  </form>
+</section>
+<script>
+async function sub(){
+  const email = document.getElementById('email').value.trim();
+  const r = await fetch('/api/subscribe', {
+    method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({ email, source: location.pathname })
+  });
+  const j = await r.json();
+  document.getElementById('msg').textContent = j.ok ? "Check your inbox." : "Try again.";
+}
+</script>
+<section class="section" id="newsletter">
+  <h2>Get SharpMind Weekly</h2>
+  <p class="section-desc">Strategic AI insights. Zero spam.</p>
+  <form id="sub" onsubmit="event.preventDefault(); sub();" style="margin:14px auto;max-width:520px">
+    <input type="email" id="email" placeholder="you@company.com" required
+           style="width:70%;padding:12px;border-radius:10px;border:1px solid #ddd">
+    <button type="submit" class="cta">Subscribe</button>
+    <div id="msg" style="margin-top:8px;font-size:.95rem;opacity:.85"></div>
+  </form>
+</section>
+<script>
+async function sub(){
+  const email = document.getElementById('email').value.trim();
+  const r = await fetch('/api/subscribe', {
+    method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({ email, source: location.pathname })
+  });
+  const j = await r.json();
+  document.getElementById('msg').textContent = j.ok ? "Check your inbox." : "Try again.";
+}
+</script>
+<section class="section" id="newsletter">
+  <h2>Get SharpMind Weekly</h2>
+  <p class="section-desc">Strategic AI insights. Zero spam.</p>
+  <form id="sub" onsubmit="event.preventDefault(); sub();" style="margin:14px auto;max-width:520px">
+    <input type="email" id="email" placeholder="you@company.com" required
+           style="width:70%;padding:12px;border-radius:10px;border:1px solid #ddd">
+    <button type="submit" class="cta">Subscribe</button>
+    <div id="msg" style="margin-top:8px;font-size:.95rem;opacity:.85"></div>
+  </form>
+</section>
+<script>
+async function sub(){
+  const email = document.getElementById('email').value.trim();
+  const r = await fetch('/api/subscribe', {
+    method:'POST', headers:{'content-type':'application/json'},
+    body: JSON.stringify({ email, source: location.pathname })
+  });
+  const j = await r.json();
+  document.getElementById('msg').textContent = j.ok ? "Check your inbox." : "Try again.";
+}
+</script>
+</footer>
+
+
+<section id="newsletter" class="section" style="text-align:center">
+  <h2>Join SharpMind Newsletter</h2>
+  <p>Premium insights. One email a week. No spam.</p>
+  <form id="nl" onsubmit="return subscribe(event)" style="margin-top:12px">
+    <input type="email" name="email" placeholder="you@example.com" required
+           style="padding:10px;border-radius:8px;border:1px solid #ddd;min-width:260px">
+    <button type="submit"
+            style="padding:10px 16px;border-radius:8px;background:#4F46E5;color:#fff;border:0;font-weight:600">
+      Subscribe
+    </button>
+    <span id="nl-msg" style="margin-left:10px"></span>
+  </form>
+</section>
+<script>
+async function subscribe(e){
+  e.preventDefault();
+  const f = e.target, msg = document.getElementById('nl-msg');
+  msg.textContent = 'Working…';
+  try{
+    const r = await fetch('/api/subscribe', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email: f.email.value })
+    });
+    if(r.ok){ msg.textContent = 'Welcome aboard! Check your inbox.'; f.reset(); }
+    else{
+      const j = await r.json().catch(()=>({}));
+      msg.textContent = j.error === 'invalid_email' ? 'Email non valida' : 'Errore, riprova';
+    }
+  }catch(_){ msg.textContent = 'Errore di rete'; }
+  return false;
+}
+</script>
+
+</body>
+<section id="newsletter" class="section">
+  <h2>Join SharpMind Newsletter</h2>
+  <p>Premium insights, one email a week. No spam.</p>
+  <form id="nl" onsubmit="return subscribe(event)" style="margin-top:12px">
+    <input type="email" name="email" placeholder="you@example.com" required
+           style="padding:10px;border-radius:8px;border:1px solid #ddd;min-width:260px">
+    <button type="submit"
+      style="padding:10px 16px;border-radius:8px;background:#4F46E5;color:#fff;border:0;font-weight:600">
+      Subscribe
+    </button>
+    <span id="nl-msg" style="margin-left:10px"></span>
+  </form>
+  <script>
+    async function subscribe(e){
+      e.preventDefault();
+      const f=e.target; const btn=f.querySelector('button'); const m=document.getElementById('nl-msg');
+      btn.disabled=true; m.textContent='…';
+      try{
+        const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({email:f.email.value})});
+        const j=await r.json().catch(()=>({}));
+        if(r.ok && j.ok){ m.textContent='Welcome aboard!'; f.reset(); }
+        else{ m.textContent='Subscription failed. Try again.'; }
+      }catch{ m.textContent='Network error'; }
+      btn.disabled=false; return false;
+    }
+  </script>
+</section>

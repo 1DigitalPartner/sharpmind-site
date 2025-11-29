@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Trend Analyzer</title><link rel="stylesheet" href="/assets/style.css">
+<style>.wrap{max-width:860px;margin:40px auto;padding:0 16px}.muted{opacity:.8}</style>
+</head><body><div class="wrap">
+  <h1>AI Trend Analyzer</h1>
+  <p class="muted">Incolla una descrizione/estratto. Ti restituisco uno <b>score</b> (0–100) e le <b>reason</b> principali.</p>
+  <textarea id="t" rows="8" style="width:100%;padding:12px;border-radius:10px"></textarea>
+  <button onclick="run()" style="margin-top:12px">Analyze</button>
+  <pre id="out" style="background:#111;color:#eee;padding:14px;border-radius:10px;overflow:auto;margin-top:14px"></pre>
+</div>
+<script>
+function run(){
+  const s = document.getElementById('t').value.toLowerCase();
+  const signals = [
+    ["agent","Agentic systems"],["retrieval","RAG/Knowledge"],["safety","Safety/Gov"],
+    ["realtime","Realtime"],["vision","Multimodal"],["latency","Perf"],["cost","Cost"],
+    ["benchmark","Benchmarks"],["open source","Open Source"],["orchestr","Orchestration"]
+  ];
+  let score=0, hits=[];
+  for(const [k,label] of signals){ if(s.includes(k)){ score+=10; hits.push(label);} }
+  score = Math.min(100, Math.max(10, score || 15));
+  const take = score>60 ? "Signal forte, converrebbe approfondire" : (score>30 ? "Segnale medio, da monitorare" : "Debole, probabilmente hype");
+  document.getElementById('out').textContent = JSON.stringify({score, hits, take}, null, 2);
+}
+</script>
+</body></html>

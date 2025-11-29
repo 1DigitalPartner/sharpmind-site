@@ -1,0 +1,6 @@
+# API (Pages Functions)
+POST /api/subscribe    /api/subscribe   200
+
+# Se esistono file statici, servili così come sono
+/en/posts/*            /en/posts/:splat  200
+/en/topics/*           /en/topics/:splat 200

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Science Navigator — SharpMind</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .container{max-width:980px;margin:40px auto;padding:0 16px}
+    .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    select{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px}
+    .btn{margin-top:12px;padding:10px 16px;border:0;border-radius:10px;background:#3b00ff;color:#fff;font-weight:600;cursor:pointer}
+    .card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+    .muted{opacity:.8}
+    ul{margin:8px 0 0 18px}
+    .tag{display:inline-block;margin-right:6px;margin-top:6px;background:#eef2ff;border:1px solid #c7d2fe;color:#3730a3;padding:4px 8px;border-radius:999px;font-size:12px}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Data Science Navigator</h1>
+      <p class="subtitle">Pick the right technique fast.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <label>Task</label>
+        <select id="task">
+          <option>Classification</option>
+          <option>Regression</option>
+          <option>Clustering</option>
+          <option>Time Series</option>
+          <option>NLP</option>
+          <option>Recommender</option>
+          <option>Anomaly Detection</option>
+        </select>
+      </div>
+      <div class="card">
+        <label>Data Type</label>
+        <select id="dtype">
+          <option>Structured</option>
+          <option>Text</option>
+          <option>Images</option>
+          <option>Time Series</option>
+          <option>Mixed</option>
+        </select>
+      </div>
+      <div class="card">
+        <label>Volume</label>
+        <select id="volume">
+          <option>Small (&lt;10k rows)</option>
+          <option>Medium (10k–1M)</option>
+          <option>Large (&gt;1M)</option>
+        </select>
+      </div>
+      <div class="card">
+        <label>Goal</label>
+        <select id="goal">
+          <option>Accuracy</option>
+          <option>Interpretability</option>
+          <option>Latency</option>
+          <option>Robustness</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn" id="recommend">Recommend</button>
+
+    <div id="out" class="card" style="margin-top:16px;display:none">
+      <h3>Recommended</h3>
+      <ul id="rec"></ul>
+      <div id="tags"></div>
+      <p class="muted" id="notes"></p>
+    </div>
+  </div>
+
+  <script>
+    const rules = (t,d,v,g)=>{
+      const r = [];
+      const tags = [];
+      function add(name, why){ r.push(name + (why? " — "+why:"")); }
+      // Structured tabular
+      if(d==='Structured' && (t==='Classification'||t==='Regression')){
+        if(g==='Interpretability' || v==='Small (&lt;10k rows)'){ add('Logistic/Linear Regression', 'baseline, interpretable'); add('Decision Tree', 'feature splits'); tags.push('Baseline','Explainable'); }
+        if(g==='Accuracy' && v!=='Small (&lt;10k rows)'){ add('XGBoost / LightGBM', 'SOTA tabular'); add('Random Forest', 'robust'); tags.push('SOTA Tabular'); }
+        if(g==='Latency'){ add('Linear/Logistic + Feature Hashing', 'fast inference'); tags.push('Low Latency'); }
+      }
+      // Clustering
+      if(t==='Clustering'){
+        if(v==='Small (&lt;10k rows)') add('K-Means', 'quick baseline');
+        add('HDBSCAN', 'densità, outliers');
+        if(d==='Text') add('Embeddings + HDBSCAN', 'semantic clusters');
+        tags.push('Unsupervised');
+      }
+      // Time Series
+      if(t==='Time Series' || d==='Time Series'){
+        if(v==='Small (&lt;10k rows)') add('Prophet', 'stagionalità rapida');
+        add('SARIMAX', 'serie singole, interpretabile');
+        if(v!=='Small (&lt;10k rows)') add('LightGBM/LSTM', 'serie multiple / multivariate');
+        tags.push('Forecasting');
+      }
+      // NLP
+      if(d==='Text' || t==='NLP'){
+        add('Embeddings + Classifier', 'rapido e potente');
+        if(g==='Accuracy') add('Transformer fine-tune (small)', 'se etichettati');
+        tags.push('NLP');
+      }
+      // Recommender
+      if(t==='Recommender'){ add('Matrix Factorization', 'baseline'); add('Two-tower (Embeddings)', 'scalable'); tags.push('Ranking'); }
+      // Anomaly
+      if(t==='Anomaly Detection'){ add('Isolation Forest', 'robusto'); add('Autoencoder (if deep)', 'complessi'); tags.push('Outliers'); }
+
+      if(!r.length) add('Start with a simple baseline', 'stabilire il floor');
+      const note = "Pipeline consigliata: baseline → cross-val → tuning → drift & monitoring. Aggiungi SHAP se serve interpretabilità.";
+      return {r, tags, note};
+    };
+
+    document.getElementById('recommend').onclick=()=>{
+      const t = document.getElementById('task').value;
+      const d = document.getElementById('dtype').value;
+      const v = document.getElementById('volume').value;
+      const g = document.getElementById('goal').value;
+      const {r, tags, note} = rules(t,d,v,g);
+      const ul = document.getElementById('rec'); ul.innerHTML='';
+      r.forEach(x=>{ const li=document.createElement('li'); li.textContent=x; ul.appendChild(li); });
+      const tg=document.getElementById('tags'); tg.innerHTML='';
+      tags.forEach(x=>{ const s=document.createElement('span'); s.className='tag'; s.textContent=x; tg.appendChild(s); });
+      document.getElementById('notes').textContent = note;
+      document.getElementById('out').style.display='block';
+    };
+  </script>
+</body>
+</html>
