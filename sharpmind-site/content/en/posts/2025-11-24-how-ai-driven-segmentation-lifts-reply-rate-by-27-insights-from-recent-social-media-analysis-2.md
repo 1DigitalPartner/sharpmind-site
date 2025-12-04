@@ -8,6 +8,7 @@ hero: "/assets/images/posts/how-ai-driven-segmentation-lifts-reply-rate-by-27-in
 og_image: "/assets/images/posts/how-ai-driven-segmentation-lifts-reply-rate-by-27-insights-from-recent-social-media-analysis-og.jpg"
 seo_description: "How AI-driven segmentation lifts reply rate by 27%: Insights from Recent Social Media Analysis | TanziTech"
 ---
+
 How AI-driven segmentation lifts reply rate by 27%: Insights from Recent Social Media Analysis | TanziTech
 
   # How AI-driven segmentation lifts reply rate by 27%: Insights from Recent Social Media Analysis

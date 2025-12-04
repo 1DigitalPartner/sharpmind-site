@@ -8,6 +8,7 @@ hero: "/assets/images/posts/3-data-backed-plays-to-grow-demo-requests-in-14-days
 og_image: "/assets/images/posts/3-data-backed-plays-to-grow-demo-requests-in-14-days-insights-from-recent-social-media-analysis-og.jpg"
 seo_description: "3 data-backed plays to grow demo requests in 14 days: Insights from Recent Social Media Analysis | TanziTech"
 ---
+
 3 data-backed plays to grow demo requests in 14 days: Insights from Recent Social Media Analysis | TanziTech
 
   # 3 data-backed plays to grow demo requests in 14 days: Insights from Recent Social Media Analysis

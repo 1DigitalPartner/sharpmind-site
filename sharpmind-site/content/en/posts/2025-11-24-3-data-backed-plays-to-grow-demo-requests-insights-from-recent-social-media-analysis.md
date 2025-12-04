@@ -8,6 +8,7 @@ hero: "/assets/images/posts/3-data-backed-plays-to-grow-demo-requests-insights-f
 og_image: "/assets/images/posts/3-data-backed-plays-to-grow-demo-requests-insights-from-recent-social-media-analysis-og.jpg"
 seo_description: "3 data-backed plays to grow demo requests: Insights from Recent Social Media Analysis | TanziTech"
 ---
+
 3 data-backed plays to grow demo requests: Insights from Recent Social Media Analysis | TanziTech
 
 :root{--brand:#2563eb;--brand2:#0d9488;--accent:#ea580c}

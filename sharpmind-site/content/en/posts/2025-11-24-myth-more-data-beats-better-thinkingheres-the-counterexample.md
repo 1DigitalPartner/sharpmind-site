@@ -8,6 +8,7 @@ hero: "/assets/images/posts/myth-more-data-beats-better-thinkingheres-the-counte
 og_image: "/assets/images/posts/myth-more-data-beats-better-thinkingheres-the-counterexample-og.jpg"
 seo_description: "Myth: 'More data beats better thinking'—here’s the counterexample"
 ---
+
 Myth: 'More data beats better thinking'—here’s the counterexample
 
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"Myth: 'More data beats better thinking'—here’s the counterexample","datePublished":"2025-09-18","author":{"@type":"Person","name":"Gabriele Tanzi"},"mainEntityOfPage":"https://tanzitech.com/posts/auto/2025-09-18-myth-more-data-beats-better-thinkingheres-the-counterexample.html","description":"Curated insight • r/datascience • 2025-09-18"}

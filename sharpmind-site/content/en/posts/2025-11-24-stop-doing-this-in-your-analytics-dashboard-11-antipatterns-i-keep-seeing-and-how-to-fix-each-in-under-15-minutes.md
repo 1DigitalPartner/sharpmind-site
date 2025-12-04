@@ -8,6 +8,7 @@ hero: "/assets/images/posts/stop-doing-this-in-your-analytics-dashboard-11-antip
 og_image: "/assets/images/posts/stop-doing-this-in-your-analytics-dashboard-11-antipatterns-i-keep-seeing-and-how-to-fix-each-in-under-15-minutes-og.jpg"
 seo_description: "Stop doing this in your analytics dashboard: 11 antipatterns I keep seeing and how to fix each in under 15 minutes."
 ---
+
 Stop doing this in your analytics dashboard: 11 antipatterns I keep seeing and how to fix each in under 15 minutes.
 
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"Stop doing this in your analytics dashboard: 11 antipatterns I keep seeing and how to fix each in under 15 minutes.","datePublished":"2025-09-18","author":{"@type":"Person","name":"Gabriele Tanzi"},"mainEntityOfPage":"https://tanzitech.com/posts/auto/2025-09-18-stop-doing-this-in-your-analytics-dashboard-11-antipatterns-i-keep-seeing-and-h.html","description":"Curated insight • @datasavvy • 2025-09-18"}

@@ -4,12 +4,14 @@ subtitle: "A strategic examination of agentic AI as autonomous decision enablers
 date: 2025-11-29
 seo_description: "Explore how agentic AI systems enhance scalable, adaptive decision-making for enterprises, with a pragmatic guide for senior operators and founders."
 tags:
-  - ai
-  - agentic systems
-  - data analytics
-  - enterprise strategy
-  - automation
+- ai
+- agentic-systems
+- data-analytics
+- enterprise-strategy
+- automation
 ---
+
+
 
 ## Key Insights
 

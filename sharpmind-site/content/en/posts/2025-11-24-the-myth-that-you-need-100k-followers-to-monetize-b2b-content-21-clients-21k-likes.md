@@ -8,6 +8,7 @@ hero: "/assets/images/posts/the-myth-that-you-need-100k-followers-to-monetize-b2
 og_image: "/assets/images/posts/the-myth-that-you-need-100k-followers-to-monetize-b2b-content-21-clients-21k-likes-og.jpg"
 seo_description: "The myth that you need 100k followers to monetize B2B content. 21 clients > 21k likes."
 ---
+
 The myth that you need 100k followers to monetize B2B content. 21 clients > 21k likes.
 
  21k likes.">

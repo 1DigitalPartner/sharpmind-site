@@ -8,6 +8,7 @@ hero: "/assets/images/posts/unpopular-opinion-most-ai-growth-playbooks-are-backw
 og_image: "/assets/images/posts/unpopular-opinion-most-ai-growth-playbooks-are-backwards-do-this-instead-small-data-faster-iteration-customer-in-th-og.jpg"
 seo_description: "Unpopular opinion: Most AI growth playbooks are backwards. Do this instead: small data, faster iteration, customer-in-th"
 ---
+
 Unpopular opinion: Most AI growth playbooks are backwards. Do this instead: small data, faster iteration, customer-in-th
 
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"Unpopular opinion: Most AI growth playbooks are backwards. Do this instead: small data, faster iteration, customer-in-th","datePublished":"2025-09-20","author":{"@type":"Person","name":"Gabriele Tanzi"},"mainEntityOfPage":"https://tanzitech.com/posts/auto/2025-09-20-unpopular-opinion-most-ai-growth-playbooks-are-backwards-do-this-instead-smal.html","description":"Curated insight • @tanzi_tech • 2025-09-20"}

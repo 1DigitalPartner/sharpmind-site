@@ -4,10 +4,8 @@ key_insights:
 - Agentic AI transforms raw data into autonomous, actionable decisions.
 - Leaders can leverage agentic AI to streamline operations and accelerate growth.
 - Real-time insights from agentic AI enable proactive, strategic responses.
-seo_description: Discover how agentic AI revolutionizes data analytics by automating
-  decision-making and enhancing operational efficiency for strategic leadership.
-subtitle: Enabling senior leaders and founders to automate decisions and optimize
-  operations with real-time AI-driven insights.
+seo_description: "Discover how agentic AI revolutionizes data analytics by automating decision-making and enhancing operational efficiency for strategic leadership."
+subtitle: "Enabling senior leaders and founders to automate decisions and optimize operations with real-time AI-driven insights."
 tags:
 - ai
 - data
@@ -15,10 +13,10 @@ tags:
 - analytics
 - automation
 - business-strategy
-title: 'Agentic AI: Empowering Autonomous Competitive Advantage through Data Analytics'
 ---
 
-
+title: "Agentic AI: Empowering Autonomous Competitive Advantage through Data Analytics"
+---
 ## Key Insights
 
 - Agentic AI systems enable continuous, autonomous decision-making by integrating real-time data analytics with action-oriented algorithms.

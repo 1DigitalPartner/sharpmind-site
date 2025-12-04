@@ -4,13 +4,15 @@ subtitle: "How senior operators and founders can strategically integrate agentic
 date: 2025-11-29
 seo_description: "Explore agentic AI's role in transforming data analytics and decision-making for senior leaders. Practical insights on implementation and outcomes."
 tags:
-  - ai
-  - data
-  - agentic systems
-  - analytics
-  - decision-making
-  - enterprise ai
+- ai
+- data
+- agentic-systems
+- analytics
+- decision-making
+- enterprise-ai
 ---
+
+
 
 ## Key Insights
 

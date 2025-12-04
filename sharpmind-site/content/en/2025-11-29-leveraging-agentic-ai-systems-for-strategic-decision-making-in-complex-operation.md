@@ -4,13 +4,15 @@ subtitle: "How integrating agentic AI enhances analytics-led decisions and adapt
 date: 2025-11-29
 seo_description: "Explore how agentic AI systems empower senior operators to transform data into actionable insights, enabling agile and strategic decision-making in complex operational landscapes."
 tags:
-  - ai
-  - data
-  - agentic-systems
-  - analytics
-  - strategic-decision-making
-  - operations
+- ai
+- data
+- agentic-systems
+- analytics
+- strategic-decision-making
+- operations
 ---
+
+
 
 ## Key Insights
 

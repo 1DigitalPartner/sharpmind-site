@@ -8,6 +8,7 @@ hero: "/assets/images/posts/titolo-topic-che-vuoi-spingere-oggi-insights-from-re
 og_image: "/assets/images/posts/titolo-topic-che-vuoi-spingere-oggi-insights-from-recent-social-media-analysis-og.jpg"
 seo_description: "Titolo/Topic che vuoi spingere oggi: Insights from Recent Social Media Analysis | TanziTech"
 ---
+
 Titolo/Topic che vuoi spingere oggi: Insights from Recent Social Media Analysis | TanziTech
 
 :root{--brand:#2563eb;--brand2:#0d9488;--accent:#ea580c}

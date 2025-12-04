@@ -6,8 +6,9 @@ lang: "en"
 tags: "[ai, data, tech]"
 hero: "/assets/images/posts/methodology-overview-hero.jpg"
 og_image: "/assets/images/posts/methodology-overview-og.jpg"
-seo_description: "window.dataLayer = window.dataLayer || [];"
+seo_description: ""
 ---
+
 window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

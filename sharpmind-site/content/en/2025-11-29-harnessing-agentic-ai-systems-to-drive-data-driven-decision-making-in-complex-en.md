@@ -1,20 +1,18 @@
 ---
-title: "Stronger Title Version:  \nBeyond Insights: How Agentic AI Is Revolutionizing\
-  \ Autonomous Decision-Making in Complex Enterprises"
-subtitle: Exploring how agentic AI systems shift analytics from passive insights to
-  proactive operational execution for senior leaders.
+title: "Stronger Title Version: Beyond Insights: How Agentic AI Is Revolutionizing Autonomous Decision-Making in Complex Enterprises"
+subtitle: "Exploring how agentic AI systems shift analytics from passive insights to proactive operational execution for senior leaders."
 date: 2025-11-29
-seo_description: "SEO Description:  \nAgentic AI systems autonomously interpret data\
-  \ and execute real-time decisions, transforming enterprise analytics into agile,\
-  \ strategic operations."
+seo_description: "\"SEO Description: Agentic AI systems autonomously interpret data and execute real-time decisions, transforming enterprise analytics into agile, strategic operations."
 tags:
-- "Topic Tags:  \nAgentic AI"
-- ' Autonomous Systems'
-- ' Data-Driven Decision Making'
-- ' AI Governance'
-- ' Enterprise Analytics'
-- ' AI in Business'
-- ' AI Integration'
+- agentic-ai
+- autonomous-systems
+- data-driven-decision-making
+- ai-governance
+- enterprise-analytics
+- ai-in-business
+- ai-integration
+---
+
 executive_summary:
 - 'Executive Summary:  '
 - '- Agentic AI extends traditional analytics by autonomously interpreting data and
@@ -40,8 +38,9 @@ internal_links:
 - '- "Best Practices for AI Governance and Risk Management"  '
 - '- "Leveraging Data and Analytics for Strategic Advantage"  '
 - '- "AI and Machine Learning for Supply Chain Optimization"  '
-- '- "Implementing Change Management in AI Adoption"'
----
+- '- "Implementing Change Management in AI Adoption"'---
+
+
 
 
 ## Key Insights

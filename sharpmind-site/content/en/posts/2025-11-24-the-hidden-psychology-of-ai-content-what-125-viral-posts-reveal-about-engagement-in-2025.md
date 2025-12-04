@@ -6,8 +6,9 @@ lang: "en"
 tags: "[ai, data, tech]"
 hero: "/assets/images/posts/the-hidden-psychology-of-ai-content-what-125-viral-posts-reveal-about-engagement-in-2025-hero.jpg"
 og_image: "/assets/images/posts/the-hidden-psychology-of-ai-content-what-125-viral-posts-reveal-about-engagement-in-2025-og.jpg"
-seo_description: "window.dataLayer = window.dataLayer || [];"
+seo_description: ""
 ---
+
 window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

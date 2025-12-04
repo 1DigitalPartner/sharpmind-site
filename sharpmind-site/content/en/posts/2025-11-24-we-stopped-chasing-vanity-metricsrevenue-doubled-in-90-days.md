@@ -8,6 +8,7 @@ hero: "/assets/images/posts/we-stopped-chasing-vanity-metricsrevenue-doubled-in-
 og_image: "/assets/images/posts/we-stopped-chasing-vanity-metricsrevenue-doubled-in-90-days-og.jpg"
 seo_description: "We stopped chasing vanity metrics—revenue doubled in 90 days"
 ---
+
 We stopped chasing vanity metrics—revenue doubled in 90 days
 
 {"@context":"https://schema.org","@type":"BlogPosting","headline":"We stopped chasing vanity metrics—revenue doubled in 90 days","datePublished":"2025-09-20","author":{"@type":"Person","name":"Gabriele Tanzi"},"mainEntityOfPage":"https://tanzitech.com/posts/auto/2025-09-20-we-stopped-chasing-vanity-metricsrevenue-doubled-in-90-days.html","description":"Curated insight • r/Entrepreneur • 2025-09-20"}

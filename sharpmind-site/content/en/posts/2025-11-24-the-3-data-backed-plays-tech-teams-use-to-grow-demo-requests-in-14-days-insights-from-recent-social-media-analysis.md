@@ -8,6 +8,7 @@ hero: "/assets/images/posts/the-3-data-backed-plays-tech-teams-use-to-grow-demo-
 og_image: "/assets/images/posts/the-3-data-backed-plays-tech-teams-use-to-grow-demo-requests-in-14-days-insights-from-recent-social-media-analysis-og.jpg"
 seo_description: "The 3 data-backed plays tech teams use to grow demo requests in 14 days: Insights from Recent Social Media Analysis | TanziTech"
 ---
+
 The 3 data-backed plays tech teams use to grow demo requests in 14 days: Insights from Recent Social Media Analysis | TanziTech
 
 :root{--brand:#2563eb;--brand2:#0d9488;--accent:#ea580c}

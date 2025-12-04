@@ -8,6 +8,7 @@ hero: "/assets/images/posts/campaign-analytics-integration-guide-hero.jpg"
 og_image: "/assets/images/posts/campaign-analytics-integration-guide-og.jpg"
 seo_description: "🔍 Campaign Analytics Integration Guide | TanziTech"
 ---
+
 🔍 Campaign Analytics Integration Guide | TanziTech
 
 :root{--brand:#2563eb;--brand2:#0d9488}body{max-width:900px;margin:0 auto;padding:24px;line-height:1.6}a{color:var(--brand)}

@@ -1,26 +1,19 @@
 ---
-title: "Stronger Title**  \nHow Senior Leaders Can Harness Agentic AI to Unlock Real-Time,\
-  \ Scalable Decision Autonomy in Complex Operations\n\n---\n\n**"
-subtitle: A data-driven exploration of how agentic AI can enhance senior operational
-  decision-making and strategic autonomy in dynamic environments
+title: "Stronger Title** How Senior Leaders Can Harness Agentic AI to Unlock Real-Time, Scalable Decision Autonomy in Complex Operations\n\n---\n\n**"
+subtitle: "A data-driven exploration of how agentic AI can enhance senior operational decision-making and strategic autonomy in dynamic environments"
 date: 2025-11-29
-seo_description: "SEO Description**  \nUnlock scalable decision autonomy with agentic\
-  \ AI: strategies for senior leaders to optimize autonomous systems balancing speed,\
-  \ accuracy, and governance in complex operations.\n\n---\n\n**"
+seo_description: "\"SEO Description** Unlock scalable decision autonomy with agentic AI: strategies for senior leaders to optimize autonomous systems balancing speed, accuracy, and governance in complex operations. --- **"
 tags:
-- "SEO Tags**  \nagentic AI"
-- autonomous decision-making
-- scalable AI systems
-- AI governance frameworks
-- real-time data AI
-- AI in operations
-- 'AI risk management
+- seo-tags
+- agentic-ai
+- autonomous-decision-making
+- scalable-ai-systems
+- ai-governance-frameworks
+- real-time-data-ai
+- ai-in-operations
+- ai-risk-management
+---
 
-
-  ---
-
-
-  **'
 executive_summary:
 - 'Executive Summary**  '
 - '- Agentic AI empowers autonomous, real-time micro-decisions to streamline complex
@@ -49,8 +42,9 @@ key_takeaways:
 - '---'
 - ''
 - '**'
-internal_links: []
----
+internal_links: []---
+
+
 ## Key Insights
 
 - Agentic AI systems shift operational decision-making closer to real-time contexts by enabling autonomous, data-driven micro-decisions.

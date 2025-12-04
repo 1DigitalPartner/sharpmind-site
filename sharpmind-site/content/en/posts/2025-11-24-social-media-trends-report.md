@@ -8,6 +8,7 @@ hero: "/assets/images/posts/social-media-trends-report-hero.jpg"
 og_image: "/assets/images/posts/social-media-trends-report-og.jpg"
 seo_description: "📊 SOCIAL MEDIA TRENDS REPORT | TanziTech"
 ---
+
 📊 SOCIAL MEDIA TRENDS REPORT | TanziTech
 
 {

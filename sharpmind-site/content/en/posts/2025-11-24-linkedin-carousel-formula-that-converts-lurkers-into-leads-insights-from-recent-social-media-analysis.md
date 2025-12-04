@@ -8,6 +8,7 @@ hero: "/assets/images/posts/linkedin-carousel-formula-that-converts-lurkers-into
 og_image: "/assets/images/posts/linkedin-carousel-formula-that-converts-lurkers-into-leads-insights-from-recent-social-media-analysis-og.jpg"
 seo_description: "LinkedIn carousel formula that converts lurkers into leads: Insights from Recent Social Media Analysis | TanziTech"
 ---
+
 LinkedIn carousel formula that converts lurkers into leads: Insights from Recent Social Media Analysis | TanziTech
 
   # LinkedIn carousel formula that converts lurkers into leads: Insights from Recent Social Media Analysis

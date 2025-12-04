@@ -4,12 +4,14 @@ subtitle: "How agentic AI systems transform data analytics and operational agili
 date: 2025-11-29
 seo_description: "Explore how agentic AI enables scalable decisions in complex operational environments through advanced analytics and autonomous actions."
 tags:
-  - ai
-  - agentic systems
-  - data analytics
-  - operations
-  - decision-making
+- ai
+- agentic-systems
+- data-analytics
+- operations
+- decision-making
 ---
+
+
 
 ## Key Insights
 

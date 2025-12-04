@@ -8,6 +8,7 @@ hero: "/assets/images/posts/the-data-that-breaks-all-the-rules-hero.jpg"
 og_image: "/assets/images/posts/the-data-that-breaks-all-the-rules-og.jpg"
 seo_description: "Instagram Growth Secrets: What 3,000 Posts and 2.1M Likes Revealed | Gabriele Tanzi"
 ---
+
 Instagram Growth Secrets: What 3,000 Posts and 2.1M Likes Revealed | Gabriele Tanzi
     
 
