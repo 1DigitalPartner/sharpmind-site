@@ -84,6 +84,10 @@ def generate_article_json() -> dict:
         - Do not write for experts only.
         - Use short sentences where possible.
         - Keep paragraphs light: 1 to 3 sentences.
+        - Hard readability gate: no paragraph may exceed 85 words.
+        - Hard readability gate: no sentence may exceed 26 words.
+        - Use line breaks often. Split dense explanations into smaller blocks.
+        - If a section needs detail, use bullets instead of a long paragraph.
         - Explain every technical term in simple words the first time it appears.
         - Use concrete examples.
         - Always explain:
@@ -133,11 +137,13 @@ def build_markdown(data: dict) -> str:
     # YAML frontmatter
     lines = ["---"]
     safe_title = title.replace('"', "'")
+    safe_subtitle = subtitle.replace('"', "'")
+    safe_seo_desc = seo_desc.replace('"', "'")
     lines.append(f'title: "{safe_title}"')
     if subtitle:
-        lines.append(f'subtitle: "{subtitle.replace("\"", "\'")}"')
+        lines.append(f'subtitle: "{safe_subtitle}"')
     lines.append(f"date: {today()}")
-    lines.append(f'seo_description: "{seo_desc.replace("\"", "\'")}"')
+    lines.append(f'seo_description: "{safe_seo_desc}"')
     if tags:
         lines.append("tags:")
         for t in tags:
