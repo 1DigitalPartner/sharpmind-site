@@ -514,3 +514,27 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 [OK] Post generated successfully
 warning: could not open directory 'Library/SafariTechnologyPreview/': Operation not permitted
 warning: could not open directory '.Trash/': Operation not permitted
+----- RUN Tue Jun  9 16:12:49 CEST 2026 -----
+Traceback (most recent call last):
+  File "/Users/gabrieletanzi/repos/sharpmind-site/sharpmind-site/scripts/generate_post.py", line 5, in <module>
+    from openai import OpenAI
+ModuleNotFoundError: No module named 'openai'
+[QUALITY] Running readability gate on: /Users/gabrieletanzi/repos/sharpmind-site/sharpmind-site/content/en/2026-06-09-decision-logs-the-control-layer-your-ai-agents-need.md
+=== TanziTech Readability Gate ===
+File: /Users/gabrieletanzi/repos/sharpmind-site/sharpmind-site/content/en/2026-06-09-decision-logs-the-control-layer-your-ai-agents-need.md
+Score: 95/100
+Words: 1899
+Sentences: 238
+Average sentence length: 8.0
+Max sentence length: 23
+Long sentences >28 words: 0
+Very long sentences >38 words: 0
+Dense paragraphs >95 words: 0
+Jargon hits: []
+Numeric claims/examples: 27
+
+Warnings:
+⚠️  many numeric claims/examples: 27
+
+Status: PASSED ✅
+[OK] Post generated successfully
