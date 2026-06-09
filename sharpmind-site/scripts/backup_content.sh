@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="/Users/gabrieletanzi/sharpmind-site"
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
 BRANCH="content-backup"
 
 cd "$REPO"

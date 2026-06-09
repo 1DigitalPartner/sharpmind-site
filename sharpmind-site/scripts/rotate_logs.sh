@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-LOG="/Users/gabrieletanzi/sharpmind-site/cron.log"
-ARCHIVE="/Users/gabrieletanzi/sharpmind-site/logs"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+LOG="$ROOT/cron.log"
+ARCHIVE="$ROOT/logs"
 
 mkdir -p "$ARCHIVE"
 

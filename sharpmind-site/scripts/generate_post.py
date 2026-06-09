@@ -11,13 +11,38 @@ def call_openai(prompt: str) -> str:
     """
     Chiama OpenAI e ritorna il testo di output.
     Usa il campo .output_text per semplicità.
+
+    Model policy:
+    - Use the strongest configured/available model first.
+    - If the current API project blocks that model, fall back to the next premium model.
+    - Never fall back to a weak model silently.
     """
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    resp = client.responses.create(
-        model="gpt-4.1-mini",
-        input=prompt,
-    )
-    return resp.output_text
+
+    preferred = os.getenv("OPENAI_MODEL") or os.getenv("WEEKLY_REPORT_MODEL")
+    fallback_models = ["gpt-5.5", "gpt-5.1", "gpt-5", "gpt-4.1", "gpt-4o"]
+    models = [preferred] + fallback_models if preferred else fallback_models
+
+    last_error = None
+
+    for model in dict.fromkeys([m for m in models if m]):
+        try:
+            print(f"[OPENAI] Trying model: {model}")
+            resp = client.responses.create(
+                model=model,
+                input=prompt,
+            )
+            print(f"[OPENAI] Model used: {model}")
+            return resp.output_text
+        except Exception as error:
+            last_error = error
+            message = str(error)
+            if "model_not_found" in message or "does not have access to model" in message:
+                print(f"[OPENAI] Model unavailable, trying next: {model}")
+                continue
+            raise
+
+    raise RuntimeError(f"No approved premium OpenAI model worked. Last error: {last_error}")
 
 
 def generate_article_json() -> dict:
@@ -29,8 +54,12 @@ def generate_article_json() -> dict:
         """
         You are SharpMind, a strategic AI & data insights writer.
 
-        Write ONE high–quality article about AI / data / agentic systems / analytics
-        for senior operators and founders.
+        Write ONE high-value article about AI, data, agentic systems, analytics,
+        or business growth.
+
+        The content must keep enterprise-level value, but the language must be easy
+        to understand for non-experts. A smart 15-year-old should understand the
+        main problem, the method, the examples, and the practical result.
 
         Return ONLY a single JSON object, no prose, no explanation.
 
@@ -50,8 +79,22 @@ def generate_article_json() -> dict:
 
         Rules:
         - Language: English.
-        - Tone: analytical, senior, data-informed, no buzzword salad.
+        - Tone: professional, clear, useful, and commercially grounded.
+        - Keep the strategic value high, but explain it in plain words.
+        - Do not write for experts only.
+        - Use short sentences where possible.
+        - Keep paragraphs light: 1 to 3 sentences.
+        - Explain every technical term in simple words the first time it appears.
+        - Use concrete examples.
+        - Always explain:
+          1. what problem the reader has,
+          2. why it matters,
+          3. how the method solves it,
+          4. what practical result the reader gets.
         - Avoid generic intros like "In today's fast-paced world".
+        - Avoid dense consultant language.
+        - Avoid vague phrases such as leverage, optimize, unlock, framework, transformation,
+          strategic alignment, robust ecosystem, paradigm, synergy, cutting-edge.
         - Focus on one strong topic, not a vague overview.
         """
     )

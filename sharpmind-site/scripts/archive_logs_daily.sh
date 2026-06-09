@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/Users/gabrieletanzi/sharpmind-site"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 ARCHIVE="$ROOT/logs/daily"
 
 mkdir -p "$ARCHIVE"
