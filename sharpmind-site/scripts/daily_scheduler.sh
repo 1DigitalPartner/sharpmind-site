@@ -44,7 +44,10 @@ fi
 LOG="$PROJECT_ROOT/cron.log"
 
 run() {
-    "$PY" "$BASE_DIR/generate_post.py"
+    if ! "$PY" "$BASE_DIR/generate_post.py"; then
+        echo "[ERROR] Post generation failed"
+        return 1
+    fi
 
     latest="$(find "$PROJECT_ROOT/content/en" "$PROJECT_ROOT/content/en/posts" -type f -name "*.md" -size +0c 2>/dev/null | xargs ls -t 2>/dev/null | head -1)"
 
